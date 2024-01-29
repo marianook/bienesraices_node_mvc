@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
-
-const SibApiV3Sdk = require("sib-api-v3-sdk");
+import SibApiV3Sdk from "sib-api-v3-sdk";
 
 const emailRegistro = async (datos) => {
   const { email, nombre, token } = datos;
