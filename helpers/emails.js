@@ -7,7 +7,7 @@ const emailRegistro = async (datos) => {
   // Configurar el cliente de Brevo
   const defaultClient = SibApiV3Sdk.ApiClient.instance;
   const apiKey = defaultClient.authentications["api-key"];
-  apiKey.apiKey = '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'//process.env.BREVO_API_KEY; // Reemplaza con tu clave de API de Brevo
+  apiKey.apiKey = process.env.BREVO_API_KEY; // Reemplaza con tu clave de API de Brevo
   const apiInstance = new SibApiV3Sdk.EmailCampaignsApi();
 
   // Crear un objeto de campaña de correo electrónico
