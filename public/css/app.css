@@ -981,9 +981,9 @@ video {
     flex-direction: row;
   }
 
-   {
+   /* {
     align-items: center;
-  }
+  } */
 
   .sm\:items-center {
     align-items: center;
