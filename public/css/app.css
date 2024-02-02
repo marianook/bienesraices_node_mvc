@@ -981,9 +981,9 @@ video {
     flex-direction: row;
   }
 
-   /* {
+   {
     align-items: center;
-  } */
+  }
 
   .sm\:items-center {
     align-items: center;
@@ -1075,24 +1075,16 @@ video {
     display: block;
   }
 
-  .lg\:w-4\/6 {
-    width: 66.666667%;
-  }
-
   .lg\:w-1\/6 {
     width: 16.666667%;
   }
 
-  .lg\:flex-1 {
-    flex: 1 1 0%;
+  .lg\:w-4\/6 {
+    width: 66.666667%;
   }
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
   }
 }
 

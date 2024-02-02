@@ -15,32 +15,23 @@ const emailRegistro = async (datos) => {
 
     // Enviar el email
     await transport.sendMail({
-      from: "BienesRaices.com",
+      from: "noreply@devmarianohayward.com",
       to: email,
-      subject: "Confirma tu cuenta en bienesraices.com",
+      subject: "Confirma tu cuenta en Bienes Raíces",
       text: "Confirma tu cuenta en bienesraices.com",
       html: `
         <p>Hola ${nombre}, comprueba tu cuenta en bienesraices.com</p>
         <p>Tu cuenta ya está lista, solo debes confirmarla en el siguiente enlace:
-        <a href="${process.env.BACKEND_URL}:${
-        process.env.PORT ?? 3000
-      }/auth/confirmar-cuenta/${token}">Confirmar cuenta<a/></p>
+        <a href="${process.env.BACKEND_URL}/auth/confirmar-cuenta/${token}">Confirmar cuenta<a/></p>
 
         <p>Si tú no creaste esta cuenta, puedes ignorar el mensaje</p>
       `,
     });
-
+    // :${process.env.PORT ?? 3000}
     console.log("Correo electrónico enviado con éxito.");
   } catch (error) {
     console.error("Error al enviar el correo:", error.message);
   }
-};
-
-// Ejemplo de uso
-const datosEjemplo = {
-  email: "dev.marianohayward@gmail.com",
-  nombre: "Usuario Ejemplo",
-  token: "tokenEjemplo",
 };
 
 const emailOlvidePassword = async (datos) => {
@@ -56,18 +47,16 @@ const emailOlvidePassword = async (datos) => {
 
   // Enviar el email
   await transport.sendMail({
-    from: "BienesRaices.com",
+    from: "noreply@devmarianohayward.com",
     to: email,
-    subject: "Restablece tu clave en bienesraices.com",
+    subject: "Restablece tu clave en Bienes Raíces",
     text: "Restablece tu clave en bienesraices.com",
     html: `
     <p>Hola ${nombre}, has solicitado restablecer tu clave en bienesraices.com</p>
     <p>Sigue el siguiente enlace para generar un password nuevo: 
-    <a href="${process.env.BACKEND_URL}:${
-      process.env.PORT ?? 3000
-    }/auth/olvide-password/${token}">Reestablecer password<a/></p>
+    <a href="${process.env.BACKEND_URL}/auth/olvide-password/${token}">Reestablecer password<a/></p>
 
-    <p>Si tu no solicitaste el cambio de contraseña, puedes ignorar este mensaje</p>
+    <p>Si tú no solicitaste el cambio de contraseña, puedes ignorar este mensaje</p>
     
     `,
   });
